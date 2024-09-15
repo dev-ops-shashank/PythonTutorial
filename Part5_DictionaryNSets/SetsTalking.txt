@@ -43,6 +43,32 @@ difference(other_set): Returns a new set with elements in this set but not in th
 symmetric_difference(other_set): Returns a new set with elements in either set, but not both.
 issubset(other_set): Returns True if this set is a subset of other_set.
 issuperset(other_set): Returns True if this set is a superset of other_set.
+Here's a comprehensive list of all the set methods available in Python:
+add(elem): Adds an element to the set.
+clear(): Removes all elements from the set.
+copy(): Returns a shallow copy of the set.
+difference(other_set, ...): Returns a new set with elements that are in this set but not in others.
+difference_update(other_set, ...): Removes all elements of another set from this set.
+discard(elem): Removes an element from the set if it's a member. If not, does nothing.
+intersection(other_set, ...): Returns a new set with elements common to the set and all others.
+intersection_update(other_set, ...): Updates the set, keeping only elements found in it and all others.
+isdisjoint(other_set): Returns True if two sets have a null intersection.
+issubset(other_set): Returns True if another set contains this set.
+issuperset(other_set): Returns True if this set contains another set.
+pop(): Removes and returns an arbitrary set element. Raises KeyError if empty.
+remove(elem): Removes an element from the set. Raises KeyError if not found.
+symmetric_difference(other_set): Returns a new set with elements in either this set or other but not both.
+symmetric_difference_update(other_set): Updates this set, keeping only elements found in either set, but not in both.
+union(other_set, ...): Returns a new set with elements from this set and others.
+update(other_set, ...): Updates the set, adding elements from all others.
+Additional operations (not methods, but often used with sets):
+len(s): Returns the number of elements in set s.
+x in s: Tests if x is a member of set s.
+x not in s: Tests if x is not a member of set s.
+set(iterable): Constructs a set from an iterable (e.g., list, tuple).
+These methods provide a wide range of functionality for working with sets, 
+from basic operations like adding and removing elements to more complex set theory operations
+ like unions, intersections, and differences.
 
 Set Operations Using Operators:
 pythonCopyset1 = {1, 2, 3}
