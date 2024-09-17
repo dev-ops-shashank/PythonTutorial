@@ -1,0 +1,6 @@
+
+OS manages computer resources efficiently.
+Windows, macOS, Linux are popular OS choices.
+OS provides interface between hardware and user.
+Multitasking is a key feature of modern OS.
+File systems organize data storage in OS.
