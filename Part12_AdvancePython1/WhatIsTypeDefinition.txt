@@ -1,0 +1,103 @@
+Type definition in Python refers to the practice of specifying the expected types of variables, 
+function parameters, and return values. This concept became more prominent with the introduction 
+of type hints in Python 3.5 and has been expanded in subsequent versions. Let's explore type 
+definitions in Python:
+
+1. Purpose:
+   - Improve code readability
+   - Catch type-related errors early (when using type checkers)
+   - Enhance IDE autocompletion and code analysis
+   - Serve as documentation
+
+2. Basic Syntax:
+   Variables: `variable_name: type`
+   Functions: `def function_name(parameter: type) -> return_type:`
+
+3. Common Types:
+   - `int`, `float`, `str`, `bool`
+   - `List[type]`, `Dict[key_type, value_type]`, `Tuple[type, ...]`
+   - `Optional[type]` for values that could be None
+   - `Any` for values of any type
+
+4. Examples:
+   a) Variable type hints:
+   ```python
+   age: int = 30
+   name: str = "Alice"
+   is_student: bool = True
+   ```
+   b) Function with type hints:
+   ```python
+   def greet(name: str) -> str:
+       return f"Hello, {name}!"
+   ```
+   c) More complex types:
+   ```python
+   from typing import List, Dict, Optional
+
+   def process_data(items: List[int], config: Dict[str, str]) -> Optional[float]:
+       # function body
+       pass
+   ```
+
+5. Type Aliases:
+   You can create aliases for complex types:
+   ```python
+   from typing import List, Tuple
+
+   Vector = List[float]
+   Matrix = List[Vector]
+
+   def dot_product(v1: Vector, v2: Vector) -> float:
+       return sum(x * y for x, y in zip(v1, v2))
+   ```
+
+6. Union Types:
+   For variables that can be multiple types:
+   ```python
+   from typing import Union
+
+   def print_id(id: Union[int, str]):
+       print(f"ID: {id}")
+   ```
+
+7. Type Checking:
+   Python itself doesn't enforce these types at runtime. To check types, you need to use external 
+   tools like mypy:
+   ```
+   $ mypy your_script.py
+   ```
+
+8. Generic Types:
+   For creating flexible, reusable code:
+   ```python
+   from typing import TypeVar, List
+
+   T = TypeVar('T')
+
+   def first(l: List[T]) -> T:
+       return l[0]
+   ```
+
+9. Callable Types:
+   For functions that accept other functions:
+   ```python
+   from typing import Callable
+
+   def apply(func: Callable[[int], str], value: int) -> str:
+       return func(value)
+   ```
+
+10. Final Variables:
+    Indicates that a variable shouldn't be reassigned:
+    ```python
+    from typing import Final
+
+    MAX_SIZE: Final = 100
+    ```
+
+Remember, these type hints don't affect the runtime behavior of your Python code. 
+They're used by type checkers, IDEs, and other tools to provide additional information about your code.
+
+Type definitions are particularly useful in larger projects, where they can significantly 
+improve code maintainability and catch potential errors early in the development process.
