@@ -1,0 +1,45 @@
+Great question! The `__pycache__` folder is a normal part of Python's operation, but it's good to 
+understand what it is and how to handle it. Let's break this down:
+
+1. What is `__pycache__`?
+   - It's a directory created by Python 3.x to store compiled bytecode versions of your Python modules.
+   - The files in this folder have a `.pyc` extension.
+
+2. Why is it created?
+   - Python creates these compiled files to speed up module loading.
+   - When you import a module, Python checks if there's a compiled version in `__pycache__`. If it 
+   exists and is up-to-date, Python uses it instead of recompiling the `.py` file.
+
+3. How was it created automatically?
+   - Python creates this folder and the `.pyc` files automatically when you run your Python scripts.
+   - It happens when you import modules (like you did with `from module import myFunc`).
+
+4. Is it safe?
+   - Yes, it's completely safe. It's a standard part of Python's operation.
+   - It doesn't contain any sensitive information, just compiled versions of your Python code.
+
+5. Can you remove it?
+   - Yes, you can safely remove the `__pycache__` folder and its contents.
+   - Python will recreate it the next time you run your code.
+
+6. Will removing it impact your code?
+   - Removing it won't affect your code's functionality.
+   - The only impact is that Python will need to recompile your modules the next time you run your 
+   code, which might cause a slight delay in startup time.
+
+7. Should you include it in version control (like Git)?
+   - Generally, no. It's considered best practice to exclude `__pycache__` from version control.
+   - You can add `__pycache__/` to your `.gitignore` file to prevent it from being tracked.
+
+8. Can you prevent its creation?
+   - You can set the environment variable `PYTHONDONTWRITEBYTECODE` to a non-empty value to prevent 
+   Python from creating `.pyc` files and the `__pycache__` directory.
+   - You can also use the `-B` flag when running Python to achieve the same effect.
+
+9. Python version considerations:
+   - In Python 2.x, `.pyc` files were created in the same directory as the `.py` files.
+   - Python 3.x introduced the `__pycache__` directory to keep things cleaner.
+
+In summary, the `__pycache__` folder is a normal, safe part of Python's operation. You can remove it 
+if you want, but it's generally best to just ignore it (especially in version control) and let Python
+manage it automatically. It helps with performance and doesn't affect your actual code.
